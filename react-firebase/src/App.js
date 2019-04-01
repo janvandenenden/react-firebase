@@ -7,7 +7,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // When we want to use a component that we created we need to import it.
 import Navbar from './components/layout/Navbar.js';
 import Dashboard from './components/dashboard/Dashboard.js';
-// We use a route for the Dashboard as it shouldn't be showed on all pages. The Switch-component ensures that the component is only shown on the first matching route.
+// We use a route for the Dashboard as it shouldn't be showed on all pages. 
+// The Switch-component ensures that the component is only shown on the first matching route.
+// The Route exact path means it has to be an exact match
+import ProjectDetails from './components/projects/ProjectDetails'
 
 class App extends Component {
   render() {
@@ -16,7 +19,8 @@ class App extends Component {
       <div className="App">       
         <Navbar />
         <Switch>
-          <Route path='/' component={Dashboard} />
+          <Route exact path='/' component={Dashboard} />
+          <Route path='/project/:id' component={ProjectDetails} />
         </Switch>
       </div>
       </BrowserRouter>
