@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(/img/bg.jpg) center;
+  background: url(/img/bg.jpg) no-repeat center;
   background-size: 100%;
   background-position: top;
 }
@@ -24,4 +24,8 @@ code {
 form {
   padding:20px;
   margin-top: 60px;
+}
+
+form button, form h5{
+  margin: 20px 0px;
 }
