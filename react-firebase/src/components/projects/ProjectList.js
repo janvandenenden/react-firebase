@@ -1,34 +1,15 @@
 import React from 'react';
+import ProjectSummary from './ProjectSummary';
+
+//Rather than writing multiple times the overview of a project it is better to extract this to a seperate component
+//If we want to change the template of the projectsummary we can just edit it in one place.
 
 const ProjectList = () => {
     return (
         <div className="project-list section">
-
-        <div className="card z-depth-0 project-summary">
-            <div className="card-content grey-text darken-3">
-                <span className="card-title">Project Title</span>
-                <p>Posted by the Net Ninja</p>
-                <p className="grey-text">1st of April, 2pm</p>
-            </div>
-        </div> 
-
-        <div className="card z-depth-0 project-summary">
-            <div className="card-content grey-text darken-3">
-                <span className="card-title">Project Title</span>
-                <p>Posted by the Net Ninja</p>
-                <p className="grey-text">1st of April, 2pm</p>
-            </div>
-        </div> 
-
-        <div className="card z-depth-0 project-summary">
-            <div className="card-content grey-text darken-3">
-                <span className="card-title">Project Title</span>
-                <p>Posted by the Net Ninja</p>
-                <p className="grey-text">1st of April, 2pm</p>
-            </div>
-        </div> 
-
-
+            <ProjectSummary />
+            <ProjectSummary />
+            <ProjectSummary />
         </div>
     )
 };
