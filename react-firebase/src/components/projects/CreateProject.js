@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // We need to remember what the user typed in the inputs so we use a class based component so we can safe the state
-// 
+import { createProject } from '../../store/actions/projectActions'
+import { connect } from 'react-redux'
 
 class CreateProject extends Component {
     state = {
@@ -16,6 +17,7 @@ handleChange = (e) => {
 handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.props.createProject(this.state)
 }
   render() {
     return (
@@ -43,4 +45,10 @@ handleSubmit = (e) => {
   }
 }
 
-export default CreateProject
+const mapDispatchToProps = (dispatch) => {
+    return{
+        createProject: (project) => dispatch(createProject(project))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreateProject)
